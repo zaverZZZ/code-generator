@@ -3,6 +3,7 @@ package org.zaver.code.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zaver.code.dao.TableDao;
+import org.zaver.code.model.Table;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -21,8 +22,8 @@ public class TableService {
     @Autowired
     private TableDao tableDao;
 
-    public List<Map<String,Object>> tabList(){
-        List<Map<String, Object>> tableList = tableDao.tableList();
+    public List<Table> tabList(){
+        List<Table> tableList = tableDao.tableList();
         return tableList;
     }
 

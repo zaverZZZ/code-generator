@@ -3,6 +3,7 @@ package org.zaver.code.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import org.zaver.code.model.Column;
 
 import java.util.List;
 import java.util.Map;
@@ -19,5 +20,5 @@ import java.util.Map;
 @Repository
 public interface ColumnDao {
     @Select("select * from information_schema.COLUMNS where TABLE_SCHEMA = (select database()) and TABLE_NAME=#{tableName}")
-    List<Map<String,Object>> columnInfo(String tableName);
+    List<Column> columnInfo(String tableName);
 }

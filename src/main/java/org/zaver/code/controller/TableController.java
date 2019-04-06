@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.zaver.code.model.Table;
 import org.zaver.code.service.TableService;
 
 import java.util.List;
@@ -24,8 +25,8 @@ public class TableController {
     @Autowired
     private TableService tableService;
     @GetMapping("/list")
-    public List<Map<String, Object>> tabList(){
-        List<Map<String, Object>> tabList = tableService.tabList();
+    public List<Table> tabList(){
+        List<Table> tabList = tableService.tabList();
         return tabList;
     }
 }
